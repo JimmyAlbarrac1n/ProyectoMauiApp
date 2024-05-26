@@ -1,0 +1,135 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="ProyectoMauiApp.MainPage">
+ 
+        <VerticalStackLayout
+    Spacing="25"
+    Padding="30,0"
+    VerticalOptions="Center">
+        <VerticalStackLayout
+            Spacing="5">
+            <Label Text="Bienvenido"
+               FontSize="25"
+               TextColor="Gray"
+               HorizontalTextAlignment="Start"/>
+            
+        </VerticalStackLayout>
+        <SearchBar
+            CancelButtonColor="White"
+            Placeholder="Busqueda"
+            PlaceholderColor="DarkCyan"
+            TextColor="White"
+            VerticalOptions="Center"/>
+        <VerticalStackLayout>
+            <Label Text="Novedades"
+            FontSize="20"
+            TextColor="Gray"
+            HorizontalTextAlignment="Center"/>  
+            <CarouselView ItemsSource ="{Binding Peliculas}"
+                          IndicatorView="indicatorView">
+                <CarouselView.ItemsLayout>
+                    <LinearItemsLayout ItemSpacing="20" Orientation="Horizontal"/>
+                </CarouselView.ItemsLayout>
+                
+                <CarouselView.ItemTemplate>
+                <DataTemplate>
+                        <Frame HasShadow="True"
+                          BorderColor="Gray"
+                          CornerRadius="5"
+                          Margin="20"
+                          WidthRequest="400"
+                          HorizontalOptions="Center"
+                          VerticalOptions="Center">
+                            <StackLayout>
+                                <Image Source="{Binding Imagen}"
+                                       Aspect="AspectFill"
+                                       HeightRequest="150"
+                                       WidthRequest="300"
+                                       HorizontalOptions="Center"/>
+
+                            </StackLayout>
+                        </Frame>
+                    </DataTemplate>
+                </CarouselView.ItemTemplate>
+            </CarouselView>
+            <IndicatorView
+                x:Name="indicatorView"
+                IndicatorColor="LightGray"
+                SelectedIndicatorColor="DarkGray"
+                HorizontalOptions="Center"/>
+
+        </VerticalStackLayout>
+        <VerticalStackLayout Spacing="20">
+            <Label Text="Cartelera"
+           FontSize="28"
+           TextColor="Gray"
+           HorizontalTextAlignment="Center"/>
+            <CollectionView ItemsSource="{Binding Peliculas}">
+                <CollectionView.ItemsLayout>
+                    <LinearItemsLayout ItemSpacing="20" Orientation="Horizontal"/>
+                    
+                </CollectionView.ItemsLayout>
+
+                <CollectionView.ItemTemplate>
+                    <DataTemplate>
+                        <Frame BorderColor="Gray"
+                                CornerRadius="5"
+                                Margin="20"
+                                WidthRequest="350"
+                   
+                                HorizontalOptions="Center"
+                                VerticalOptions="Center">
+                            <StackLayout>
+                                <Image Source="{Binding Imagen}"
+                                       Aspect="AspectFill"
+                                       HeightRequest="150"
+                                       />
+
+                            </StackLayout>
+                        </Frame>
+                    </DataTemplate>
+                </CollectionView.ItemTemplate>
+            </CollectionView>
+
+        </VerticalStackLayout>
+        <Grid Grid.Row="5"
+              Margin="10,0,10,0"
+              HeightRequest="65"
+              VerticalOptions="End">
+            <Border BackgroundColor="Gray"
+                    Stroke="Gray"
+                    StrokeThickness="2">
+                <Grid ColumnDefinitions="*,*,*"
+                      RowDefinitions="*,*" RowSpacing="3">
+                    <Label Grid.Row="1"
+                           FontSize="10"
+                           HorizontalOptions="Center"
+                           Text="Inicio"
+                           TextColor="White">
+                    </Label>
+                    <Label Grid.Row="1"
+                           Grid.Column="1"
+                           FontSize="10"
+                           HorizontalOptions="Center"
+                           Text="Cartelera"
+                           TextColor="White">           
+                    </Label>
+                    <Label Grid.Row="1"
+                           Grid.Column="2"
+                           FontSize="10"
+                           HorizontalOptions="Center"
+                           Text="Perfil"
+                           TextColor="White">   
+                    </Label>
+                    
+                </Grid>
+                      
+            </Border>
+        </Grid>
+         
+
+
+    </VerticalStackLayout>
+       
+</ContentPage>
