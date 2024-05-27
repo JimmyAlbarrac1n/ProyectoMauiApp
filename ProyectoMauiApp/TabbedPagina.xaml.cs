@@ -11,7 +11,8 @@ public partial class TabbedPagina : TabbedPage
         InitializeTales();
         BindingContext = this;
     }
-    public ObservableCollection<Pelicula> Peliculas { get; set; }
+
+	public ObservableCollection<Pelicula> Peliculas { get; set; }
   
 
     private void InitializeTales()
@@ -31,4 +32,9 @@ public partial class TabbedPagina : TabbedPage
     {
         Navigation.PushAsync(new Acceder());
     }
+
+	private void CounterBttn_Clicked(object sender, EventArgs e)
+	{
+        Navigation.PushAsync(new ContentPageDemo());
+	}
 }

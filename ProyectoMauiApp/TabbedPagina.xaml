@@ -99,11 +99,11 @@
 
 
             <Button
-x:Name="CounterBtn"
-Text="Acceder" 
-SemanticProperties.Hint="Counts the number of times you click"
-Clicked="OnCounterClicked"
-HorizontalOptions="Fill" />
+              x:Name="CounterBtn"
+              Text="Acceder" 
+              SemanticProperties.Hint="Counts the number of times you click"
+              Clicked="OnCounterClicked"
+              HorizontalOptions="Fill" />
 
         </VerticalStackLayout>
     </ContentPage>
@@ -113,9 +113,9 @@ HorizontalOptions="Fill" />
     <ContentPage Title="Cartelera">
         <VerticalStackLayout Spacing="20">
             <Label Text="Cartelera"
-FontSize="28"
-TextColor="Gray"
-HorizontalTextAlignment="Center"/>
+                    FontSize="28"
+                    TextColor="Gray"
+                    HorizontalTextAlignment="Center"/>
             <CollectionView ItemsSource="{Binding Peliculas}">
                 <CollectionView.ItemsLayout>
                     <LinearItemsLayout ItemSpacing="20" Orientation="Horizontal"/>
@@ -142,8 +142,23 @@ HorizontalTextAlignment="Center"/>
                     </DataTemplate>
                 </CollectionView.ItemTemplate>
             </CollectionView>
+            <VerticalStackLayout>
+                <Button
+                  x:Name="CounterBttn"
+                  Text="Cancelar entradas"
+                  SemanticProperties.Hint="Counts the number of times you click"
+                  Clicked="CounterBttn_Clicked"
+                  HorizontalOptions="Fill" />
+            </VerticalStackLayout>
 
         </VerticalStackLayout>
+
+       
+
     </ContentPage>
     
+    
+
+    
+
 </TabbedPage>
