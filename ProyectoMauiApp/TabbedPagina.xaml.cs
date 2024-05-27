@@ -26,4 +26,9 @@ public partial class TabbedPagina : TabbedPage
 
             };
     }
+
+    private void OnCounterClicked(object sender, EventArgs e)
+    {
+        Navigation.PushAsync(new Acceder());
+    }
 }

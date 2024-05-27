@@ -6,9 +6,10 @@
         {
             InitializeComponent();
 
-           // MainPage = new MainPage();
+            // MainPage = new MainPage();
 
-            MainPage = new TabbedPagina();
+            //MainPage = new TabbedPagina();
+            MainPage = new NavigationPage(new TabbedPagina());
         }
     }
 }
